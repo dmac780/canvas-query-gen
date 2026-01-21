@@ -52,6 +52,7 @@ const hexToRgb = hex => [
  * @returns {number[]} Interpolated color in RGB format.
  */
 const interpolateColor = (colors, t) => {
+  if (colors.length === 1) return colors[0];
   const n  = colors.length - 1;
   const i  = Math.min(Math.floor(t * n), n - 1);
   const f  = t * n - i;
